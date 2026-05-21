@@ -1,0 +1,36 @@
+export type Buyer = {
+  id?: string;
+  createdBy?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  firstName?: string;
+  lastName?: string;
+  email: string;
+  linkedinUrl?: string;
+  companyName?: string;
+  websiteUrl?: string;
+  phone?: string;
+  jobTitle?: string;
+  seniority?: string;
+  employeeSize?: string;
+  revenueEstimate?: string;
+  hqCountry?: string;
+  foundedYear?: number;
+  industry?: string;
+  brandDescription?: string;
+  materialsDealt?: string[];
+  websiteCategories?: string[];
+  importsFromIndia?: boolean | null;
+  importSupplierNames?: string[];
+  importHsCodes?: string[];
+  buyerType?: string;
+  categoryInterest?: string[];
+  customerType?: string;
+  enrichmentStatus?: "pending" | "complete" | "partial" | "failed";
+  hubspotContactId?: string;
+  lastEnrichedAt?: string;
+  notes?: string;
+  sourceErrors?: Record<string, string>;
+};
+
+export type BuyerSeed = Pick<Buyer, "firstName" | "lastName" | "email" | "linkedinUrl" | "companyName" | "websiteUrl">;

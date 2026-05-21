@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  application:
+    name: qalara-buyer-profiling
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${SUPABASE_URL}/auth/v1/.well-known/jwks.json
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+
+app:
+  cors-allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
+  apollo-api-key: ${APOLLO_API_KEY:}
+  firecrawl-api-key: ${FIRECRAWL_API_KEY:}
+  apify-api-token: ${APIFY_API_TOKEN:}
+  apify-importyeti-actor-id: ${APIFY_IMPORTYETI_ACTOR_ID:}
+  openai-api-key: ${OPENAI_API_KEY:}
+  hubspot-api-key: ${HUBSPOT_API_KEY:}
