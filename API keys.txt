@@ -1,0 +1,3 @@
+npx.cmd -y @tiny-fish/cli@latest connect codex --launch --api-key sk-tinyfish-Qbzm_6PJeI--ldt-bzen7L1gcK6QU5Hi --url "https://agent.tinyfish.ai/mcp?connect_attempt_id=1c64d1d9-6c2f-4b16-8e76-833254f70063"
+
+
